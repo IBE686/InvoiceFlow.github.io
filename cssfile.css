@@ -1,0 +1,323 @@
+/* --- Global Reset and Basic Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+main{margin-left: auto ;}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+/* --- Navbar Container --- */
+.navbar {
+    background-color: #7d7a7a;
+    color: white;
+    padding: 1rem;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space out brand and toggle/menu */
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of mobile menu */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Navigation Links (Mobile First) --- */
+.nav-menu {
+    /* On mobile, the menu is hidden by default and positioned absolutely */
+    display: none;
+    position: absolute;
+    top: 100%; /* Position right below the header */
+    left: 0;
+    width: 100%;
+    background-color: #444; /* Slightly different background for menu */
+    z-index: 10;
+}
+
+.nav-menu.active {
+    display: block; /* Show menu when 'active' class is added by JS */
+}
+
+.nav-menu ul {
+    width: 100%;
+    padding: 0;
+}
+
+.nav-menu li a {
+    display: block; /* Make links full width of the menu */
+    padding: 0.75rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+.nav-menu li a:hover {
+    background-color: #555;
+}
+
+/* --- Mobile Toggle Button (Hamburger) --- */
+.nav-toggle {
+    display: block; /* Show on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.hamburger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+/* Toggle X/Close Animation */
+.nav-toggle.active .hamburger {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(90deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(0deg) translateX(100%);
+    opacity: 0; /* Hide the bottom bar */
+}
+
+.nav-menu li a:hover {
+        background-color: #35ABAB;;
+    }
+
+
+
+#box-cont{height:100vh;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: none;
+    justify-content: space-evenly;
+    align-content:space-around;
+
+}
+.text-box{width: 45%;
+height: 100vh;
+background-color: rgb(252, 251, 251);
+padding-top: 12%;
+
+
+}
+
+.hero-text{font-size: 2.8em;
+font-family:sans-serif;
+color: #35ABAB;
+}
+
+
+.h-par{font-size: 1.5em;
+margin-top: 20px;
+margin-bottom: 20px;
+color:#2d2d2d}
+
+.img-box{width: 50%;
+height: 100vh;
+background-color: none;
+background-image: url(desktop\ img.png);
+background-repeat: no-repeat;
+background-size: contain;
+
+
+}
+.img{height: 20px;}
+.m-img{visibility: collapse;}
+
+.h-btn{font-size: 16px;
+border-radius: 4px;
+padding: 10px 10px;
+background-color:#35ABAB;
+border: none;
+font-weight: 500;}
+
+.learn-more{margin-top: 10px;
+font-size: 16px;
+color:#35ABAB;
+text-decoration: underline;}
+
+
+
+
+
+/* --- Desktop Layout (Media Query) --- */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none; /* Hide toggle button on desktop */
+    }
+
+    .nav-menu {
+        /* Reset for desktop */
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .nav-menu ul {
+        display: flex; /* Arrange links horizontally */
+        gap: 1.5rem;
+    }
+
+    .nav-menu li a {
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+        text-align: left; /* Reset text align */
+    }
+
+    
+}
+
+/* --- Tablet Layout (Media Query) --- */
+@media (max-width: 768px) {
+#box-cont{height:100vh;
+    display:block;
+}
+
+.text-box{display:flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+height: auto;
+padding-top: 5%;
+background-color:none;
+}
+
+.hero-text{font-size: 2.5em;
+font-family:sans-serif;
+color: #35ABAB;
+text-align: center;
+width:100%
+}
+
+.h-par{font-size: 1.0em;
+margin-top: 10px;
+margin-bottom: 10px;
+text-align: center}
+
+.img-box{visibility: collapse;
+}
+.m-img{visibility: visible;
+    background-image: url(mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 265px;
+    width: 65%;
+    margin-top: 10px;
+    margin-left: 17.5%;
+    margin-left: 17.5%;
+    background-color: none;
+
+}
+
+
+.h-btn{display: block;
+    font-size: 12px;
+padding: 10px 10px;
+font-weight: 500;
+margin: auto;}
+
+.learn-more{margin-top: 10px;
+font-size: 16px;
+color:#35ABAB;
+text-decoration: underline;
+text-align: center;}
+
+
+
+}
+
+
+/* --- mobile  Layout (Media Query) --- */
+@media (max-width: 525px) {
+    #box-cont{height:100vh;
+    display:block;
+}
+
+
+
+.hero-text{font-size: 1.5em;
+}
+
+.h-par{font-size: 0.7em;
+margin-top: 10px;
+margin-bottom: 10px;
+text-align: center}
+
+.img-box{visibility: collapse;
+}
+.m-img{visibility: visible;
+    background-image: url(mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 265px;
+    width: 99%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-left: auto;
+
+
+}
+
+
+.h-btn{display: block;
+    font-size: 12px;
+padding: 10px 10px;
+font-weight: 500;
+margin: auto;}
+
+.learn-more{margin-top: 10px;
+font-size: 16px;
+color:#35ABAB;
+text-decoration: underline;
+text-align: center;}
+
+
+
+}
