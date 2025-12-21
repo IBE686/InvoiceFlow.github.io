@@ -4,7 +4,11 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+  /* Change 80px to match the height of your header */
+  scroll-padding-top: 80px; 
+}
 body {
     font-family: sans-serif;
     line-height: 1.6;
@@ -183,6 +187,163 @@ color:#35ABAB;
 text-decoration: underline;}
 
 
+/*About Section*/
+.about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    font-family: sans-serif;
+}
+
+.about-hero {
+    background: #f4fafa;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #0f6c6f;
+}
+
+.about-hero h1 {
+    color: #0f6c6f;
+    margin-top: 0;
+}
+
+.highlight {
+    background: #fff;
+    padding: 15px;
+    border: 1px dashed #0f6c6f;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #0f6c6f;
+    margin-top: 40px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.comparison-table th, .comparison-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #0f6c6f;
+    color: white;
+}
+
+.about-footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+
+
+
+
+/* Container and Section Styling */
+.help-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.help-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Header & Intro */
+.help-container h1 {
+    color: #0f6c6f; /* Using your teal theme */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.help-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* FAQ Styling */
+.faq h3.question {
+    background-color: #eef7f7;
+    padding: 15px;
+    border-left: 5px solid #0f6c6f;
+    margin: 30px 0 20px 0;
+    font-size: 1.3rem;
+}
+
+.faq h4 {
+    color: #0f6c6f;
+    margin: 20px 0 5px 0;
+    font-weight: 600;
+}
+
+.faq p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Image & Button styling */
+.pannel-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Style for that empty button in step 3 */
+.faq button {
+    background-color: #0f6c6f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.faq button::after {
+    content: "Download PDF"; /* Adding text to the empty button */
+}
+
+/* Footer & Links */
+.help-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.help-footer a, .faq a {
+    color: #0f6c6f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.help-footer a:hover, .faq a:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -295,9 +456,9 @@ text-align: center}
 .m-img{visibility: visible;
     background-image: url(mobile.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 265px;
-    width: 99%;
+    background-size: contain;
+    height: 150px;
+    width: 80%;
     margin-top: 10px;
     margin-left: auto;
     margin-left: auto;
@@ -318,6 +479,11 @@ color:#35ABAB;
 text-decoration: underline;
 text-align: center;}
 
-
+.help-container {
+        padding: 20px;
+    }
+    .help-container h1 {
+        font-size: 1.8rem;
+    }
 
 }
